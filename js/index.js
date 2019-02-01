@@ -10,6 +10,12 @@ introImg.addEventListener('mouseleave', (event) => {
   event.target.src = 'img/fun-bus.jpg'
 })
 
+introImg.addEventListener('drag', (event) => {
+  // event.target.src = 'img/fun-bus.jpg'
+  document.querySelector('header').style.backgroundColor = 'orange'
+})
+
+
 document.addEventListener('keydown', event => {
   if (event.keyCode == 27) {
     alert ("You pressed the Escape key!");
@@ -35,7 +41,11 @@ h1.addEventListener('focus', event => {
   event.target.style.color = 'red'
 })
 
-// 6
+h1.addEventListener('blur', event => {
+  event.target.style.color = '#000'
+})
+
+// 8
 document.querySelector(".img-content").addEventListener('dblclick', event => {
   event.target.style.transform = 'rotate(180deg)'
 })
