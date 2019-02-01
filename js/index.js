@@ -26,3 +26,16 @@ document.querySelector('.btn').addEventListener('click', event => {
 document.querySelector('.destination').addEventListener('click', event => {
   alert("Prevent this from bubbling up");
 })
+
+let h1 = document.querySelector("h1")
+// make the h1 the first thing that's focused on
+h1.setAttribute("tabindex", "0")
+
+h1.addEventListener('focus', event => {
+  event.target.style.color = 'red'
+})
+
+// 6
+document.querySelector(".img-content").addEventListener('dblclick', event => {
+  event.target.style.transform = 'rotate(180deg)'
+})
