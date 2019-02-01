@@ -6,6 +6,10 @@ introImg.addEventListener('mouseover', (event) => {
   event.target.src = 'https://via.placeholder.com/1000x300'
 })
 
+introImg.addEventListener('mouseleave', (event) => {
+  event.target.src = 'img/fun-bus.jpg'
+})
+
 document.addEventListener('keydown', event => {
   if (event.keyCode == 27) {
     alert ("You pressed the Escape key!");
@@ -15,5 +19,10 @@ document.addEventListener('keydown', event => {
 // chain
 // mayb make it work for all the btns later.
 document.querySelector('.btn').addEventListener('click', event => {
-  alert ("You clicked this button!");
+  event.stopPropagation()
+  alert("You clicked this button!");
+})
+
+document.querySelector('.destination').addEventListener('click', event => {
+  alert("Prevent this from bubbling up");
 })
