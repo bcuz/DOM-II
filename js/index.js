@@ -1,9 +1,19 @@
 // Your code goes here
 
-// https://via.placeholder.com/876x182
-
 let introImg = document.querySelector('.intro img');
 
 introImg.addEventListener('mouseover', (event) => {
-  introImg.src = 'https://via.placeholder.com/1000x300'
+  event.target.src = 'https://via.placeholder.com/1000x300'
+})
+
+document.addEventListener('keydown', event => {
+  if (event.keyCode == 27) {
+    alert ("You pressed the Escape key!");
+  }
+})
+
+// chain
+// mayb make it work for all the btns later.
+document.querySelector('.btn').addEventListener('click', event => {
+  alert ("You clicked this button!");
 })
