@@ -23,14 +23,21 @@ document.addEventListener('keydown', event => {
 })
 
 // chain
-// mayb make it work for all the btns later.
-document.querySelector('.btn').addEventListener('click', event => {
-  event.stopPropagation()
-  alert("You clicked this button!");
+document.querySelector('.content-pick').addEventListener('click', event => {
+  if (event.target.className === 'btn') {
+    alert("You clicked a button!");
+  }
 })
 
-document.querySelector('.destination').addEventListener('click', event => {
-  alert("Prevent this from bubbling up");
+document.querySelector('.nav').addEventListener('click', event => {
+  if (event.target.className === 'nav-link') {
+    event.stopPropagation()
+    event.preventDefault()
+  }
+})
+
+document.querySelector('.main-navigation').addEventListener('click', event => {
+  alert("Prevent this from bubbling up on nav item clicks");
 })
 
 let h1 = document.querySelector("h1")
@@ -49,3 +56,5 @@ h1.addEventListener('blur', event => {
 document.querySelector(".img-content").addEventListener('dblclick', event => {
   event.target.style.transform = 'rotate(180deg)'
 })
+
+// resize	
