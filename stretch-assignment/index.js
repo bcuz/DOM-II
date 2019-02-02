@@ -1,9 +1,11 @@
+
+document.querySelectorAll('.block').forEach(block => block.style.left = 0)
+
 document.querySelector('.blocks').addEventListener('click', event => {
 
   if (event.target.tagName === 'DIV') {
     let clickedClass = event.target.className.split(" ")[1]  
     let clickedBox = document.querySelector(`.${clickedClass}`);
-    clickedBox.style.left = 0;
     clickedBox.parentNode.prepend(clickedBox);
   }
 })
